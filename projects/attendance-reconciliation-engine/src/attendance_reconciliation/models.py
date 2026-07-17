@@ -24,3 +24,13 @@ class AttendanceEvent:
     site_id: str
     timestamp: datetime
     event_type: EventType
+
+
+@dataclass(frozen=True)
+class CoverageRequirement:
+    requirement_id: str
+    site_id: str
+    role: str
+    start: datetime
+    end: datetime
+    minimum_workers: int

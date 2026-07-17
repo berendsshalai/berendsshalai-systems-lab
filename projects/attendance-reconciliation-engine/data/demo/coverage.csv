@@ -1,0 +1,4 @@
+requirement_id,site_id,role,start,end,minimum_workers
+C001,Site 001,Operator,2026-01-05T08:00:00,2026-01-05T16:00:00,2
+C002,Site 001,Lead,2026-01-05T08:00:00,2026-01-05T17:00:00,1
+C003,Site 002,Operator,2026-01-05T10:00:00,2026-01-05T18:00:00,1

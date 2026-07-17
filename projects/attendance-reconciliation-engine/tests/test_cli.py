@@ -29,6 +29,29 @@ def test_cli_writes_report(tmp_path):
     assert payload["summary"]["exception_count"] == 6
 
 
+def test_cli_writes_roster_review(tmp_path):
+    data_dir = tmp_path / "data"
+    generate(data_dir)
+    output = tmp_path / "roster-review.json"
+
+    result = main(
+        [
+            "review-roster",
+            "--shifts",
+            str(data_dir / "shifts.csv"),
+            "--coverage",
+            str(data_dir / "coverage.csv"),
+            "--output",
+            str(output),
+        ]
+    )
+
+    assert result == 0
+    payload = json.loads(output.read_text(encoding="utf-8"))
+    assert payload["summary"]["coverage_requirement_count"] == 3
+    assert payload["summary"]["coverage_gap_count"] == 1
+
+
 def test_json_readers_accept_list_payloads(tmp_path):
     shifts = [
         {

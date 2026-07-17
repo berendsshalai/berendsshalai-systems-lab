@@ -6,7 +6,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from .models import AttendanceEvent, Shift
+from .models import AttendanceEvent, CoverageRequirement, Shift
 
 
 def parse_dt(value: str) -> datetime:
@@ -49,6 +49,17 @@ def _attendance_from_row(row: dict[str, Any]) -> AttendanceEvent:
     )
 
 
+def _coverage_from_row(row: dict[str, Any]) -> CoverageRequirement:
+    return CoverageRequirement(
+        requirement_id=str(row["requirement_id"]),
+        site_id=str(row["site_id"]),
+        role=str(row["role"]),
+        start=parse_dt(str(row["start"])),
+        end=parse_dt(str(row["end"])),
+        minimum_workers=int(row["minimum_workers"]),
+    )
+
+
 def read_attendance_csv(path: str | Path) -> list[AttendanceEvent]:
     with Path(path).open(newline="", encoding="utf-8") as handle:
         return [
@@ -63,6 +74,11 @@ def read_attendance_csv(path: str | Path) -> list[AttendanceEvent]:
         ]
 
 
+def read_coverage_csv(path: str | Path) -> list[CoverageRequirement]:
+    with Path(path).open(newline="", encoding="utf-8") as handle:
+        return [_coverage_from_row(row) for row in csv.DictReader(handle)]
+
+
 def read_shifts_json(path: str | Path) -> list[Shift]:
     payload = json.loads(Path(path).read_text(encoding="utf-8"))
     rows = payload["shifts"] if isinstance(payload, dict) and "shifts" in payload else payload
@@ -73,6 +89,12 @@ def read_attendance_json(path: str | Path) -> list[AttendanceEvent]:
     payload = json.loads(Path(path).read_text(encoding="utf-8"))
     rows = payload["attendance"] if isinstance(payload, dict) and "attendance" in payload else payload
     return [_attendance_from_row(row) for row in rows]
+
+
+def read_coverage_json(path: str | Path) -> list[CoverageRequirement]:
+    payload = json.loads(Path(path).read_text(encoding="utf-8"))
+    rows = payload["coverage"] if isinstance(payload, dict) and "coverage" in payload else payload
+    return [_coverage_from_row(row) for row in rows]
 
 
 def read_shifts(path: str | Path) -> list[Shift]:
@@ -87,6 +109,13 @@ def read_attendance(path: str | Path) -> list[AttendanceEvent]:
     if source.suffix.lower() == ".json":
         return read_attendance_json(source)
     return read_attendance_csv(source)
+
+
+def read_coverage(path: str | Path) -> list[CoverageRequirement]:
+    source = Path(path)
+    if source.suffix.lower() == ".json":
+        return read_coverage_json(source)
+    return read_coverage_csv(source)
 
 
 def write_json(path: str | Path, payload: dict[str, Any]) -> None:

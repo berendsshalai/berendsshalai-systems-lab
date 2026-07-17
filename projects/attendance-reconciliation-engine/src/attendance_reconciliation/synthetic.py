@@ -10,6 +10,12 @@ SHIFT_ROWS = [
     {"shift_id": "S004", "worker_id": "Worker 004", "site_id": "Site 002", "role": "Operator", "start": "2026-01-05T10:00:00", "end": "2026-01-05T18:00:00"},
 ]
 
+COVERAGE_ROWS = [
+    {"requirement_id": "C001", "site_id": "Site 001", "role": "Operator", "start": "2026-01-05T08:00:00", "end": "2026-01-05T16:00:00", "minimum_workers": "2"},
+    {"requirement_id": "C002", "site_id": "Site 001", "role": "Lead", "start": "2026-01-05T08:00:00", "end": "2026-01-05T17:00:00", "minimum_workers": "1"},
+    {"requirement_id": "C003", "site_id": "Site 002", "role": "Operator", "start": "2026-01-05T10:00:00", "end": "2026-01-05T18:00:00", "minimum_workers": "1"},
+]
+
 ATTENDANCE_ROWS = [
     {"event_id": "E001", "worker_id": "Worker 001", "site_id": "Site 001", "timestamp": "2026-01-05T08:02:00", "event_type": "clock_in"},
     {"event_id": "E002", "worker_id": "Worker 001", "site_id": "Site 001", "timestamp": "2026-01-05T16:01:00", "event_type": "clock_out"},
@@ -33,6 +39,7 @@ def generate(target: str | Path) -> None:
     root = Path(target)
     _write_csv(root / "shifts.csv", SHIFT_ROWS)
     _write_csv(root / "attendance.csv", ATTENDANCE_ROWS)
+    _write_csv(root / "coverage.csv", COVERAGE_ROWS)
 
 
 def main() -> int:
