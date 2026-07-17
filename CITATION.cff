@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+title: Sha-Lai Berends Systems Lab
+authors:
+  - family-names: Berends
+    given-names: Sha-Lai
+version: 0.1.0-local
+license: MIT
+message: If you use this repository, please cite it using this metadata.

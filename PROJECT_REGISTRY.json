@@ -1,0 +1,81 @@
+{
+  "creator": {
+    "name": "Sha-Lai Berends",
+    "github": "berendsshalai",
+    "professional_category": "Business Automation and Data Operations",
+    "descriptor": "South African business-automation and data-operations builder creating privacy-conscious, auditable and practical workflow systems."
+  },
+  "umbrella": "Sha-Lai Berends Systems Lab",
+  "projects": [
+    {
+      "slug": "attendance-reconciliation-engine",
+      "title": "Attendance Reconciliation Engine",
+      "priority": "P0",
+      "status": "scaffolded",
+      "summary": "Reconciles planned shifts with actual attendance records and produces auditable exception reports."
+    },
+    {
+      "slug": "workforce-roster-optimizer",
+      "title": "Workforce Roster Optimisation Engine",
+      "priority": "P1",
+      "status": "planned",
+      "summary": "Generates fair, explainable rosters from configurable demand, role coverage, availability and cost rules."
+    },
+    {
+      "slug": "payroll-hours-audit",
+      "title": "Payroll Evidence and Hours Audit",
+      "priority": "P1",
+      "status": "planned",
+      "summary": "Compares attendance, approvals and payroll-ready hours as an evidence and reconciliation layer."
+    },
+    {
+      "slug": "revenue-reconciliation-toolkit",
+      "title": "External Revenue Reconciliation",
+      "priority": "P2",
+      "status": "planned",
+      "summary": "Matches external platform transactions with internal records and produces exception queues."
+    },
+    {
+      "slug": "document-to-data-workbench",
+      "title": "Slip and Document Capture Workbench",
+      "priority": "P2",
+      "status": "planned",
+      "summary": "Processes local images and PDFs into structured records with human review for uncertain fields."
+    },
+    {
+      "slug": "hourly-sales-operations-processor",
+      "title": "Hourly Sales and Operations Processor",
+      "priority": "P2",
+      "status": "planned",
+      "summary": "Normalises daily sales files into hourly operational datasets, dashboards and workbooks."
+    },
+    {
+      "slug": "recruitment-intake-routing",
+      "title": "Recruitment Intake and Candidate Routing",
+      "priority": "P1",
+      "status": "planned",
+      "summary": "Captures candidate records, deduplicates them and routes review-ready summaries without sensitive inference."
+    },
+    {
+      "slug": "operations-evidence-monitor",
+      "title": "Operational Checklist and Evidence Monitor",
+      "priority": "P3",
+      "status": "planned",
+      "summary": "Tracks checklist evidence, overdue categories and escalation queues from authorised inputs."
+    },
+    {
+      "slug": "configurable-workflow-communication-framework",
+      "title": "Configurable Workflow Communication Framework",
+      "priority": "P3",
+      "status": "planned",
+      "summary": "Provides privacy-safe workflow routing, templating, outbox and retry primitives for the ecosystem."
+    },
+    {
+      "slug": "operations-metrics-dashboard",
+      "title": "Executive Operations Dashboard",
+      "priority": "P3",
+      "status": "planned",
+      "summary": "Displays sanitised operational metrics with explainable definitions and static demonstration data."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+.private/
+.env
+.env.*
+!.env.example
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+node_modules/
+dist/
+build/
+coverage/
+out/
+*.pyc
+*.egg-info/
+.DS_Store

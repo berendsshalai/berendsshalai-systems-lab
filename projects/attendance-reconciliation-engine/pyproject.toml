@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "attendance-reconciliation-engine"
+version = "0.1.0"
+description = "Clean-room attendance reconciliation engine with synthetic data and audit reports."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Sha-Lai Berends"}]
+license = {text = "MIT"}
+dependencies = []
+
+[project.scripts]
+attendance-reconcile = "attendance_reconciliation.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

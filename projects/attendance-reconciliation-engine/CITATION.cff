@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+title: Attendance Reconciliation Engine
+authors:
+  - family-names: Berends
+    given-names: Sha-Lai
+version: 0.1.0-local
+license: MIT
+message: If you use this software, please cite it using this metadata.

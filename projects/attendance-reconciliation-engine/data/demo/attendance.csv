@@ -1,0 +1,8 @@
+event_id,worker_id,site_id,timestamp,event_type
+E001,Worker 001,Site 001,2026-01-05T08:02:00,clock_in
+E002,Worker 001,Site 001,2026-01-05T16:01:00,clock_out
+E003,Worker 002,Site 001,2026-01-05T08:22:00,clock_in
+E004,Worker 002,Site 001,2026-01-05T15:30:00,clock_out
+E005,Worker 003,Site 001,2026-01-05T09:01:00,clock_in
+E006,Worker 005,Site 001,2026-01-05T11:00:00,clock_in
+E007,Worker 005,Site 001,2026-01-05T14:00:00,clock_out

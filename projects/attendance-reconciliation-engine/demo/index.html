@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Attendance Reconciliation Engine Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">Sha-Lai Berends Systems Lab</p>
+        <h1>Attendance Reconciliation Engine</h1>
+        <p>Browser-only synthetic demonstration for planned-versus-actual attendance exceptions.</p>
+      </header>
+      <section class="toolbar" aria-label="Demo controls">
+        <button id="run-demo" type="button">Run demo reconciliation</button>
+      </section>
+      <section class="summary" id="summary" aria-live="polite"></section>
+      <section>
+        <h2>Exception Queue</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Worker</th>
+              <th>Site</th>
+              <th>Message</th>
+            </tr>
+          </thead>
+          <tbody id="exceptions"></tbody>
+        </table>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
