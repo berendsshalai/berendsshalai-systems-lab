@@ -23,6 +23,7 @@ DEFAULT_PATTERNS = {
 DATE_LIKE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 ALLOWED_EMAILS = {"security@example.com"}
+ALLOWED_PUBLIC_SOCIAL_FRAGMENTS = {"facebook.com/p/Sha-Lai-Berends-61591546301365"}
 SKIP_DIRS = {".git", ".private", "node_modules", "__pycache__", ".pytest_cache", "dist", "build", "coverage", "out"}
 TEXT_EXTENSIONS = {
     ".md", ".py", ".txt", ".json", ".yml", ".yaml", ".toml", ".ini", ".cfg", ".html", ".css", ".js", ".ts", ".tsx", ".jsx", ".csv", ".svg", ".cff"
@@ -90,6 +91,8 @@ def scan_file(path: Path, deny_terms: list[str]) -> list[dict[str, str]]:
             if category == "email" and value in ALLOWED_EMAILS:
                 continue
             if category == "phone" and DATE_LIKE.fullmatch(value):
+                continue
+            if category == "phone" and any(fragment in text and value in fragment for fragment in ALLOWED_PUBLIC_SOCIAL_FRAGMENTS):
                 continue
             if "example.com" in value or "wix-site-host.com" in value:
                 continue
