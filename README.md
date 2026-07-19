@@ -16,6 +16,11 @@ Sha-Lai Berends is a South African business-automation and data-operations build
 - SEO, course, MCP and social content plans.
 - A first flagship scaffold: Attendance Reconciliation Engine.
 
+## Public Pages
+
+- [Systems Lab website](https://berendsshalai.github.io/berendsshalai-systems-lab/)
+- [Check My Socials](https://berendsshalai.github.io/berendsshalai-systems-lab/socials/)
+
 ## Local Verification
 
 From a fresh clone:
@@ -34,7 +39,7 @@ python -m pytest tests
 
 ## Publication Status
 
-Local scaffold only. Nothing in this repository should be published until privacy gates, tests, link checks and manual publication review pass.
+Public foundation release. Shared standards, publication controls and the flagship scaffold are available for inspection. Individual components remain subject to their documented maturity, privacy review and release status.
 
 ## Non-Affiliation
 
